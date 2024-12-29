@@ -3,7 +3,7 @@ ARG SOURCE_IMAGE="fedora-bootc"
 ARG SOURCE_TAG="latest"
 
 # FETCH BASE-IMAGE
-FROM ghcr.io/ublue-os/${SOURCE_IMAGE}:${SOURCE_TAG}
+FROM ghcr.io/fedora/${SOURCE_IMAGE}:${SOURCE_TAG}
 
 # COPY CONFIGUREATION FILES AND SCRIPTS
 COPY packages /tmp/packages
