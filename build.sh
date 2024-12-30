@@ -9,7 +9,7 @@ ls -la /tmp/
 
 ### COPY PRE-CONFIGURED SYSTEM FILES
 # rsync -rvK /tmp/system_files/ /
-cp -rv /tmp/system_files/ /
+cp -rv /tmp/system_files/* /
 
 ### Create system directory structues
 mkdir -p /var/lib/alternatives
