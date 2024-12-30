@@ -8,7 +8,7 @@ RELEASE="$(rpm -E %fedora)"
 ls -la /tmp/*
 
 ### COPY FILES
-cp -rv /tmp/system_files/* /
+cp -rv /tmp/files/* /
 
 ### INSTALL PACKAGES
 dnf install \
