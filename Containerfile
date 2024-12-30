@@ -6,7 +6,9 @@ ARG SOURCE_TAG="latest"
 FROM quay.io/fedora/${SOURCE_IMAGE}:${SOURCE_TAG}
 
 # COPY CONFIGUREATION FILES AND SCRIPTS
-COPY system_files/etc/yum.repos.d /etc/
+COPY packages /tmp/packages
+COPY system_files /tmp/system_files
+COPY build.sh /tmp/build.sh
 
 # RUN BUILD-SCRIPT AND MAKE COMMIT 
 RUN /tmp/build.sh && \

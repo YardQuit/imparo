@@ -5,7 +5,10 @@ set -ouex pipefail
 RELEASE="$(rpm -E %fedora)"
 
 ### CHECKING
-ls -la /tmp/
+ls -la /tmp/*
+
+### COPY FILES
+cp -rv /tmp/system_files/* /
 
 ### INSTALL PACKAGES
 dnf install \
