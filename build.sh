@@ -8,7 +8,7 @@ RELEASE="$(rpm -E %fedora)"
 ls -la /tmp/*
 
 ### COPY FILES
-cp -rv /tmp/files/* /
+cp -rv /tmp/sysfiles/* /
 
 ### INSTALL PACKAGES
 dnf install \
@@ -57,9 +57,9 @@ rm -rf /tmp/* || true
 rm -rf /var/!(cache)
 rm -rf /var/cache/!(rpm-ostree)
 rm -rf /etc/yum.repos.d/1password.repo
+rm -rf /etc/yum.repos.d/atim-starship-fedora-41.repo
 rm -rf /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:gmaglione:podman-bootc.repo
 rm -rf /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:pennbauman:ports.repo
 rm -rf /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:a-zhn:ghostty.repo
 rm -rf /etc/yum.repos.d/_copr_ryanabx-cosmic.repo
-rm -rf /etc/yum.repos.d/atim-starship-fedora-41.repo
 rm -rf /etc/yum.repos.d/fedorapeople.org.groups.virt.virtio-win.virtio-win.repo
