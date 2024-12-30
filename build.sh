@@ -7,16 +7,9 @@ RELEASE="$(rpm -E %fedora)"
 ### CHECKING
 ls -la /tmp/
 
-### COPY PRE-CONFIGURED SYSTEM FILES
-# rsync -rvK /tmp/system_files/ /
-cp -rv /tmp/system_files/* /
-
-### Create system directory structues
-mkdir -p /var/lib/alternatives
-
-### Install packages
+### INSTALL PACKAGES
 dnf install \
-$(cat /tmp/packages/desktop) \
+$(cat /tmp/packages/desktop) 
 # $(cat /tmp/packages/develop) \
 # $(cat /tmp/packages/fonts) \
 # $(cat /tmp/packages/multimedia) \
