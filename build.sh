@@ -12,8 +12,8 @@ cp -rv /tmp/system_files/ /
 mkdir -p /var/lib/alternatives
 
 ### Install packages
-# dnf install \
-# $(cat /tmp/packages/desktop) \
+dnf install \
+$(cat /tmp/packages/desktop) \
 # $(cat /tmp/packages/develop) \
 # $(cat /tmp/packages/fonts) \
 # $(cat /tmp/packages/multimedia) \
