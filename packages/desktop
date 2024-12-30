@@ -24,6 +24,8 @@ cosmic-store
 cosmic-term
 cosmic-wallpapers
 cosmic-workspaces
+cups
+cups-client
 curl
 firefox
 firefox-langpacks
@@ -31,6 +33,7 @@ firewalld
 glibc-all-langpacks
 gnome-keyring
 initial-setup-gui-wayland-cosmic
+inxi
 iw
 NetworkManager-openvpn
 NetworkManager-tui
