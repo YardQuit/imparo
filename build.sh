@@ -11,7 +11,7 @@ ls -la /tmp/*
 cp -rv /tmp/sysfiles/* /
 
 ### INSTALL PACKAGES
-dnf install \
+dnf -y install \
 $(cat /tmp/packages/desktop) 
 # $(cat /tmp/packages/develop) \
 # $(cat /tmp/packages/fonts) \
