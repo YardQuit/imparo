@@ -42,6 +42,6 @@ plymouth
 plymouth-graphics-libs
 plymouth-system-theme
 plymouth-theme-spinner
-pop-desktop-portal-cosmic
 pop-launcher
 wpa_supplicant
+xdg-desktop-portal-cosmic
