@@ -11,6 +11,9 @@ COPY scripts /tmp/scripts
 COPY system_files /tmp/system_files
 COPY build.sh /tmp/build.sh
 
+# prerequisite
+RUN dnf install rsync &&
+
 # RUN BUILD-SCRIPT AND MAKE COMMIT 
 RUN /tmp/build.sh && \
     ostree container commit
