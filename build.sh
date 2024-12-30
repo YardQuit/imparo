@@ -9,7 +9,8 @@ cp -rv /tmp/sysfiles/* /
 
 ### INSTALL PACKAGES
 dnf -y install \
-$(cat /tmp/packages/desktop) 
+$(cat /tmp/packages/desktop) \
+$(cat /tmp/packages/personal) 
 
 ### Run configuration scripts
 sh /tmp/scripts/script_template.sh
@@ -34,3 +35,6 @@ rm -rf /tmp/* || true
 rm -rf /var/!(cache)
 rm -rf /var/cache/!(rpm-ostree)
 rm -rf /etc/yum.repos.d/_copr_ryanabx-cosmic.repo
+rm -rf /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:a-zhn:ghostty.repo
+rm -rf /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:pennbauman:ports.repo
+rm -rf /etc/yum.repos.d/atim-starship-fedora-41.repo
