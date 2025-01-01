@@ -19,7 +19,7 @@ sh /tmp/scripts/script_template.sh
 
 ### Enabling System Unit File(s)
 systemctl enable cosmic-greeter.service
-systemctl enable rpm-ostreed-automatic.timer
+systemctl enable bootc-fetch-apply-updates.timer
 systemctl enable tuned.service
 systemctl enable podman.socket
 systemctl enable fstrim.timer

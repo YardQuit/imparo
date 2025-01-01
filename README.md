@@ -30,7 +30,7 @@ systemctl reboot
 ### bootc switch
 Rebase from bootc
 ```bash
-sudo bootc switch --enforce-container-sigpolicy ghcr.io/yardquit/imparo:latest
+sudo bootc switch ghcr.io/yardquit/imparo:latest
 ```
 
 Restart your system for the changes take effect:
