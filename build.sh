@@ -23,7 +23,7 @@ systemctl enable bootc-fetch-apply-updates.timer
 systemctl enable tuned.service
 systemctl enable podman.socket
 systemctl enable fstrim.timer
-systemctl enable firewalld.service
+# systemctl enable firewalld.service
 
 ### Change default firewalld zone
 # cp /etc/firewalld/firewalld-workstation.conf /etc/firewalld/firewalld-workstation.conf.bak
