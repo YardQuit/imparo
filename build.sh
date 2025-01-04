@@ -29,8 +29,8 @@ systemctl enable fstrim.timer
 # cp /etc/firewalld/firewalld-workstation.conf /etc/firewalld/firewalld-workstation.conf.bak
 # sed -i 's/DefaultZone=FedoraWorkstation/DefaultZone=drop/g' /etc/firewalld/firewalld-workstation.conf
 
-### Fix bug preventing systemd-remount-fs.service to start
-sed -i 's/subvol\[=.*\]/#&/g' /etc/fstab
+### Fix bug preventing systemd-remount-fs.service to start - Does not work
+# sed -i 's/subvol\[=.*\]/#&/g' /etc/fstab
 
 ### Clean Up
 shopt -s extglob
