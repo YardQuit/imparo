@@ -35,8 +35,8 @@ sh /tmp/scripts/script_template.sh
 ### Disabling System Unit File(s)
 
 ### Enabling System Unit File(s)
-systemctl enable cosmic-greeter.service
 systemctl enable bootc-fetch-apply-updates.timer
+systemctl enable cosmic-greeter.service
 systemctl enable tuned.service
 systemctl enable podman.socket
 systemctl enable fstrim.timer
