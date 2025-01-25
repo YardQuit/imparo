@@ -17,20 +17,17 @@ $(cat /tmp/packages/fonts) \
 $(cat /tmp/packages/personal) 
 
 # Installs package(s) from copr repos
-dnf5 -y copr enable a-zhn/ghostty
+# dnf5 -y copr enable a-zhn/ghostty
 dnf5 -y install ghostty
-dnf5 -y copr disable a-zhn/ghostty
+# dnf5 -y copr disable a-zhn/ghostty
 
-dnf5 -y copr enable atim/starship
+# dnf5 -y copr enable atim/starship
 dnf5 -y install starship
-dnf5 -y copr disable atim/starship
+# dnf5 -y copr disable atim/starship
 
-dnf5 -y copr enable ryanabx/cosmic-epoch
+# dnf5 -y copr enable ryanabx/cosmic-epoch
 dnf5 -y install $(cat /tmp/packages/desktop_env)
-dnf5 -y copr disable ryanabx/cosmic-epoch
-
-### Run configuration scripts
-sh /tmp/scripts/script_template.sh
+# dnf5 -y copr disable ryanabx/cosmic-epoch
 
 ### Disabling System Unit File(s)
 
@@ -54,3 +51,5 @@ shopt -s extglob
 rm -rf /tmp/* || true
 rm -rf /var/!(cache)
 rm -rf /var/cache/!(rpm-ostree)
+rm -rf /etc/yum.repos.d/atim-starship-fedora-41.repo
+rm -rf /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:a-zhn:ghostty.repo
