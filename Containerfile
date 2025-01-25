@@ -1,9 +1,11 @@
 ### BASE-IMAGE ARGUMENTS
+# ARG SOURCE_REPO="ghcr.io/ublue-os"
+ARG SOURCE_REPO="quay.io/fedora"
 ARG SOURCE_IMAGE="fedora-bootc"
 ARG SOURCE_TAG="latest"
 
 ### FETCH BASE-IMAGE
-FROM quay.io/fedora/${SOURCE_IMAGE}:${SOURCE_TAG}
+FROM ${SOURCE_REPO}/${SOURCE_IMAGE}:${SOURCE_TAG}
 
 ### COPY CONFIGUREATION FILES AND SCRIPTS
 COPY sysfiles /tmp/sysfiles
