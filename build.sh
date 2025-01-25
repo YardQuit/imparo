@@ -7,10 +7,27 @@ RELEASE="$(rpm -E %fedora)"
 ### COPY FILES
 cp -rv /tmp/sysfiles/* /
 
-### INSTALL PACKAGES
-dnf -y install \
-$(cat /tmp/packages/desktop) \
+# Installs package(s)
+# dnf5 -y copr enable ublue-os/akmods
+
+dnf5 -y install \
+$(cat /tmp/packages/desktop_std) \
+$(cat /tmp/packages/security) \
+$(cat /tmp/packages/fonts) \
 $(cat /tmp/packages/personal) 
+
+# Installs package(s) from copr repos
+dnf5 -y copr enable a-zhn/ghostty
+dnf5 -y install ghostty
+dnf5 -y copr disable a-zhn/ghostty
+
+dnf5 -y copr enable atim/starship
+dnf5 -y install starship
+dnf5 -y copr disable atim/starship
+
+dnf5 -y copr enable ryanabx/cosmic-epoch
+dnf5 -y install $(cat /tmp/packages/desktop_env)
+dnf5 -y copr disable ryanabx/cosmic-epoch
 
 ### Run configuration scripts
 sh /tmp/scripts/script_template.sh
@@ -23,11 +40,11 @@ systemctl enable bootc-fetch-apply-updates.timer
 systemctl enable tuned.service
 systemctl enable podman.socket
 systemctl enable fstrim.timer
-# systemctl enable firewalld.service
+systemctl enable firewalld.service
 
 ### Change default firewalld zone
-# cp /etc/firewalld/firewalld-workstation.conf /etc/firewalld/firewalld-workstation.conf.bak
-# sed -i 's/DefaultZone=FedoraWorkstation/DefaultZone=drop/g' /etc/firewalld/firewalld-workstation.conf
+cp /etc/firewalld/firewalld-workstation.conf /etc/firewalld/firewalld-workstation.conf.bak
+sed -i 's/DefaultZone=FedoraWorkstation/DefaultZone=drop/g' /etc/firewalld/firewalld-workstation.conf
 
 ### Fix bug preventing systemd-remount-fs.service to start - Does not work
 # sed -i 's/subvol\[=.*\]/#&/g' /etc/fstab
@@ -37,7 +54,3 @@ shopt -s extglob
 rm -rf /tmp/* || true
 rm -rf /var/!(cache)
 rm -rf /var/cache/!(rpm-ostree)
-rm -rf /etc/yum.repos.d/_copr_ryanabx-cosmic.repo
-rm -rf /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:a-zhn:ghostty.repo
-rm -rf /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:pennbauman:ports.repo
-rm -rf /etc/yum.repos.d/atim-starship-fedora-41.repo

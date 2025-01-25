@@ -1,5 +1,3 @@
-starship
-lf
 fd-find
 stow
 stow-doc
@@ -10,9 +8,6 @@ sshfs
 translate-shell
 bat
 helix
-ghostty
-cascadia-fonts-all
-fontawesome-fonts-all
-jetbrains-mono-fonts-all
-liberation-fonts
 git
+wget
+sqlite
