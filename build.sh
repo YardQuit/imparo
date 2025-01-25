@@ -24,7 +24,6 @@ systemctl disable cosmic-greeter.service
 
 ### ENABLING SYSTEM UNIT FILE(S)
 systemctl enable bootc-fetch-apply-updates.timer
-systemctl enable gdm.service
 systemctl enable tuned.service
 systemctl enable podman.socket
 systemctl enable fstrim.timer
