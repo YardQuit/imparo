@@ -27,12 +27,17 @@ systemctl enable tuned.service
 systemctl enable podman.socket
 systemctl enable fstrim.timer
 systemctl enable firewalld.service
+systemctl enable tailscaled.service
 
 ### CHANGE DEFAULT FIREWALLD ZONE
 cp /etc/firewalld/firewalld-workstation.conf /etc/firewalld/firewalld-workstation.conf.bak
 sed -i 's/DefaultZone=FedoraWorkstation/DefaultZone=drop/g' /etc/firewalld/firewalld-workstation.conf
 
-### FIX BUG PREVENTING SYSTEMD-REMOUNT-FS.SERVICE TO START - DOES NOT WORK
+### YUBICO CHALLANGE FOR SUDO
+# cp /etc/pam.d/sudo /etc/pam.d/sudo.bak
+# sed -i '/PAM-1.0/a\auth       required     pam_yubico.so mode=challenge-response' /etc/pam.d/sudo
+
+### ERROR WITH BOOTC PREVENTING SYSTEMD-REMOUNT-FS.SERVICE TO START - APPLY POST INSTALL
 # sed -i 's/subvol\[=.*\]/#&/g' /etc/fstab
 
 ### CLEAN UP
@@ -42,3 +47,4 @@ rm -rf /var/!(cache)
 rm -rf /var/cache/!(rpm-ostree)
 rm -rf /etc/yum.repos.d/atim-starship-fedora-41.repo
 rm -rf /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:a-zhn:ghostty.repo
+rm -rf /etc/yum.repos.d/_copr_ryanabx-cosmic.repo
