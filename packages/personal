@@ -14,3 +14,4 @@ translate-shell
 wget
 NetworkManager-tui
 tailscale
+firewalld
