@@ -1,5 +1,6 @@
 [![Build_Image](https://github.com/YardQuit/imparo/actions/workflows/build.yml/badge.svg)](https://github.com/YardQuit/imparo/actions/workflows/build.yml)
 [![Clean_Images](https://github.com/YardQuit/imparo/actions/workflows/cleanup.yml/badge.svg)](https://github.com/YardQuit/imparo/actions/workflows/cleanup.yml)
+[![Build_Image](https://github.com/YardQuit/imparo/actions/workflows/build.yml/badge.svg)](https://github.com/YardQuit/imparo/actions/workflows/build.yml)
 [![Dependabot Updates](https://github.com/YardQuit/imparo/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/YardQuit/imparo/actions/workflows/dependabot/dependabot-updates)
 
 # imparo
