@@ -1,5 +1,4 @@
 ### BASE-IMAGE ARGUMENTS
-# ARG SOURCE_REPO="ghcr.io/ublue-os"
 ARG SOURCE_REPO="quay.io/fedora"
 ARG SOURCE_IMAGE="fedora-bootc"
 ARG SOURCE_TAG="latest"
