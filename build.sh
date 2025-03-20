@@ -23,7 +23,6 @@ dnf5 -y install starship
 # groupadd abrt
 
 ### DISABLING SYSTEM UNIT FILE(S)
-systemctl disable cosmic-greeter.service
 
 ### ENABLING SYSTEM UNIT FILE(S)
 systemctl enable tuned.service
@@ -31,6 +30,7 @@ systemctl enable podman.socket
 systemctl enable fstrim.timer
 systemctl enable firewalld.service
 systemctl enable tailscaled.service
+systemctl enable cosmic-greeter.service
 
 ### CHANGE DEFAULT FIREWALLD ZONE
 cp /etc/firewalld/firewalld-workstation.conf /etc/firewalld/firewalld-workstation.conf.bak
