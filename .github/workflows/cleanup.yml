@@ -14,7 +14,7 @@
           packages: write
         steps:
           - name: Delete Images Older Than 5 Days
-            uses: dataaxiom/ghcr-cleanup-action@v1.1.0
+            uses: dataaxiom/ghcr-cleanup-action@v1.2.2
             with:
               token: ${{ secrets.GITHUB_TOKEN }}
               packages: imparo
